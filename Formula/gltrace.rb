@@ -1,8 +1,8 @@
 class Gltrace < Formula
   desc "Terminal-first GitLab pipeline log explorer"
   homepage "https://github.com/glsuite/gltrace"
-  url "https://github.com/glsuite/gltrace/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "974a74607c9a052a76da038c85eccd7f3f16514ce02ee719bbd0f2b7ff02e225"
+  url "https://github.com/glsuite/gltrace/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "db919e5f45d21e65d3cd30cb2a05413b8d693f44b410da375916b39a32b8cacf"
   license "MIT"
   head "https://github.com/glsuite/gltrace.git", branch: "main"
 

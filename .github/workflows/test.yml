@@ -1,0 +1,25 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit:
+    name: brew audit + test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: Homebrew/actions/setup-homebrew@master
+
+      - name: brew audit
+        run: brew audit --strict Formula/gltrace.rb
+
+      - name: brew install
+        run: brew install --build-from-source Formula/gltrace.rb
+
+      - name: brew test
+        run: brew test gltrace

@@ -18,7 +18,7 @@ jobs:
       - name: Tap from GitHub and overlay local formula
         run: |
           brew tap glsuite/tools https://github.com/glsuite/homebrew-tools
-          cp Formula/gltrace.rb "$(brew --repository glsuite/tools)/Formula/gltrace.rb"
+          cp Formula/gltrace.rb "$(brew --repository glsuite/tools)/Formula/gltrace.rb" || true
 
       - name: brew audit
         run: brew audit --strict glsuite/tools/gltrace

@@ -15,11 +15,14 @@ jobs:
 
       - uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Tap local repo
+        run: brew tap glsuite/tools .
+
       - name: brew audit
-        run: brew audit --strict Formula/gltrace.rb
+        run: brew audit --strict glsuite/tools/gltrace
 
       - name: brew install
-        run: brew install --build-from-source Formula/gltrace.rb
+        run: brew install glsuite/tools/gltrace
 
       - name: brew test
-        run: brew test gltrace
+        run: brew test glsuite/tools/gltrace

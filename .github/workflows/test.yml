@@ -13,10 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Tap local repo
-        run: brew tap glsuite/tools .
+      - name: Tap from GitHub and overlay local formula
+        run: |
+          brew tap glsuite/tools https://github.com/glsuite/homebrew-tools
+          cp Formula/gltrace.rb "$(brew --repository glsuite/tools)/Formula/gltrace.rb"
 
       - name: brew audit
         run: brew audit --strict glsuite/tools/gltrace
